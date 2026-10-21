@@ -1,0 +1,156 @@
+/* ---------- Basic page setup ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+/* ---------- Top bar ---------- */
+header {
+  background: #111827;
+  color: white;
+  padding: 16px 24px;
+  display: flex;                 /* put title and cart side by side */
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+#cart-badge {
+  background: #f59e0b;
+  color: #111827;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* ---------- Page layout ---------- */
+main {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;                 /* two columns: products | cart */
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* ---------- Product grid ---------- */
+#product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);   /* little lift effect */
+}
+
+.product-emoji {
+  font-size: 56px;
+}
+
+.product-name {
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+.product-price {
+  color: #059669;
+  margin-bottom: 10px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.add-btn {
+  background: #6366f1;
+  color: white;
+  padding: 8px 14px;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background: #4f46e5;
+}
+
+/* ---------- Cart ---------- */
+#cart {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  align-self: start;
+}
+
+#cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.qty-controls button {
+  background: #e5e7eb;
+  width: 26px;
+  height: 26px;
+}
+
+.qty-controls span {
+  margin: 0 6px;
+}
+
+#empty-message {
+  color: #6b7280;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#clear-btn {
+  background: #ef4444;
+  color: white;
+  padding: 8px 14px;
+  width: 100%;
+}
+
+/* ---------- Small screens (phones): stack into one column ---------- */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}

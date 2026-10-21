@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Shop</title>
+
+  <!-- Connect our CSS file (the styling) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top bar with the shop name and cart count -->
+  <header>
+    <h1>🛍️ Mini Shop</h1>
+    <div id="cart-badge">🛒 Cart: <span id="cart-count">0</span></div>
+  </header>
+
+  <main>
+    <!-- Products section: JavaScript fills this grid with product cards -->
+    <section>
+      <h2>Products</h2>
+      <div id="product-grid"></div>
+    </section>
+
+    <!-- Cart section: shows what the user added -->
+    <section id="cart">
+      <h2>Your Cart</h2>
+      <ul id="cart-list"></ul>
+      <p id="empty-message">Your cart is empty.</p>
+      <p class="total">Total: ₹<span id="cart-total">0</span></p>
+      <button id="clear-btn">Clear Cart</button>
+    </section>
+  </main>
+
+  <!-- Connect our JavaScript file (the behavior).
+       It goes at the bottom so the elements above already exist. -->
+  <script src="script.js"></script>
+</body>
+</html>
